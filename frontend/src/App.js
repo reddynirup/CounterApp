@@ -27,7 +27,7 @@ const Home = () => {
 
   const fetchCounter = useCallback(async () => {
     try {
-      const response = await fetch('/api/counter');
+      const response = await fetch('https://counterapp-5ceg.onrender.com/api/counter');
       const data = await response.json();
       dispatch({ type: 'SET', count: data.count, mycount: data.mycount });
     } catch (err) {
@@ -55,7 +55,7 @@ const Counter = () => {
 
   const incrementCounter = useCallback(async () => {
     try {
-      await fetch(`/api/counter/increment/count`, { method: 'POST' });
+      await fetch(`https://counterapp-5ceg.onrender.com/api/counter/increment/count`, { method: 'POST' });
       dispatch({ type: 'INCREMENT' });
     } catch (err) {
       console.error(err);
@@ -64,7 +64,7 @@ const Counter = () => {
 
   const decrementCounter = useCallback(async () => {
     try {
-      await fetch('/api/counter/decrement/count', { method: 'POST' });
+      await fetch('https://counterapp-5ceg.onrender.com/api/counter/decrement/count', { method: 'POST' });
       dispatch({ type: 'DECREMENT' });
     } catch (err) {
       console.error(err);
@@ -89,7 +89,7 @@ const MyCounter = () => {
 
   const incrementMyCounter = useCallback(async () => {
     try {
-      await fetch(`/api/counter/increment/mycount`, { method: 'POST' });
+      await fetch(`https://counterapp-5ceg.onrender.com/api/counter/increment/mycount`, { method: 'POST' });
       dispatch({ type: 'MYINCREMENT' });
     } catch (err) {
       console.error(err);
@@ -98,7 +98,7 @@ const MyCounter = () => {
 
   const decrementMyCounter = useCallback(async () => {
     try {
-      await fetch(`/api/counter/decrement/mycount`, { method: 'POST' });
+      await fetch(`https://counterapp-5ceg.onrender.com/api/counter/decrement/mycount`, { method: 'POST' });
       dispatch({ type: 'MYDECREMENT' });
     } catch (err) {
       console.error(err);
